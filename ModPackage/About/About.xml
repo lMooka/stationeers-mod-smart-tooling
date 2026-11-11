@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>Smart Tooling</Name>
+    <Author>Mooka</Author>
+    <Version>1.0.0</Version>
+    <Description><![CDATA[[h1]Smart Tooling[/h1]
+        Look at a structure and press one key: the mod takes the items and tools that structure needs out of your backpack, tool belt or uniform and puts them in your hands.
+        [h2]Modes[/h2]
+        [b]Construction[/b]: the kit/material and the tool for the next build stage (or for repairing / upgrading the structure).
+        [b]Deconstruction[/b]: the tool that deconstructs the structure in its current stage.
+        [h2]Hotkeys[/h2]
+        X: select the items for the structure you are looking at.
+        Shift+X: switch between Construction and Deconstruction.
+        Ctrl+X: put the items back where they were.
+        All hotkeys can be changed in the mod configuration (BepInEx/config/mooka.stationeers.smarttooling.cfg).
+        [h2]Requirements[/h2]
+        BepInEx + StationeersLaunchPad. Client-side only: works in single player and on any server.
+    ]]></Description>
+    <ChangeLog><![CDATA[
+        1.0.0:
+        - First version
+    ]]></ChangeLog>
+    <WorkshopHandle>3837934258</WorkshopHandle>
+    <Tags />
+    <Dependencies />
+    <LoadBefore />
+    <LoadAfter />
+    <InGameDescription><![CDATA[Look at a structure and press X to grab the items it needs. Shift+X switches Construction/Deconstruction, Ctrl+X puts the items back.]]></InGameDescription>
+</ModMetadata>

@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>SmartTooling</AssemblyName>
+    <RootNamespace>SmartTooling</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <Version>1.0.0</Version>
+    <DebugType>none</DebugType>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <!-- Slot.Occupant e marcado como obsoleto pelo jogo; usamos Slot.Get(). -->
+    <NoWarn>$(NoWarn);CS0618</NoWarn>
+    <!-- Pasta de instalacao do Stationeers. Pode ser sobrescrita: dotnet build -p:GameDir="D:\...\Stationeers" -->
+    <GameDir Condition="'$(GameDir)' == ''">G:\SteamLibrary\steamapps\common\Stationeers</GameDir>
+    <ManagedDir>$(GameDir)\rocketstation_Data\Managed</ManagedDir>
+    <BepInExDir>$(GameDir)\BepInEx\core</BepInExDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(SelfTest)' == 'true'">
+    <DefineConstants>$(DefineConstants);SELFTEST</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(SelfTest)' != 'true'">
+    <Compile Remove="SelfTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="$(ManagedDir)\Assembly-CSharp.dll" Private="false" />
+    <Reference Include="$(ManagedDir)\Assembly-CSharp-firstpass.dll" Private="false" />
+    <Reference Include="$(ManagedDir)\UniTask.dll" Private="false" />
+    <Reference Include="$(ManagedDir)\UnityEngine.dll" Private="false" />
+    <Reference Include="$(ManagedDir)\UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="$(ManagedDir)\UnityEngine.PhysicsModule.dll" Private="false" />
+    <Reference Include="$(ManagedDir)\UnityEngine.InputLegacyModule.dll" Private="false" />
+    <Reference Include="$(ManagedDir)\UnityEngine.IMGUIModule.dll" Private="false" />
+    <Reference Include="$(ManagedDir)\UnityEngine.TextRenderingModule.dll" Private="false" />
+    <Reference Include="$(BepInExDir)\BepInEx.dll" Private="false" />
+    <Reference Include="$(BepInExDir)\0Harmony.dll" Private="false" />
+  </ItemGroup>
+
+</Project>
